@@ -1,13 +1,34 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-class NelsusOnboarding extends StatefulWidget {
-  const NelsusOnboarding({Key? key}) : super(key: key);
+import 'package:flutter/material.dart';
+import 'package:nelsus/helpers/strings.dart';
+import 'package:nelsus/onboarding/onboarding_screens.dart';
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  _NelsusOnboardingState createState() => _NelsusOnboardingState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _NelsusOnboardingState extends State<NelsusOnboarding> {
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    startTime();
+  }
+
+  startTime() async {
+    var duration = const Duration(seconds: 2);
+    return Timer(duration, onboardingSlides);
+  }
+
+  onboardingSlides() {
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (context) => const OnboardingSlides()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +51,7 @@ class _NelsusOnboardingState extends State<NelsusOnboarding> {
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 32.0),
                     child: Text(
-                      "Nigerian Electronic Library Series for University Students",
+                      ProductName,
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black87,

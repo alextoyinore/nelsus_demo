@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'onboarding/onboarding_slide_screens.dart';
+import 'package:nelsus/onboarding/splash_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
           appBarTheme: Theme.of(context)
               .appBarTheme
               .copyWith(brightness: Brightness.dark)),
-      home: NelsusOnboardingSlides(),
+      home: SplashScreen(),
     );
   }
 }
