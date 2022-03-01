@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nelsus/helpers/colors.dart';
 import 'package:nelsus/helpers/strings.dart';
+import 'package:nelsus/login_signup.dart';
+import 'package:nelsus/widgets/nelsus_button.dart';
 
 class OnboardingSlidesContent extends StatefulWidget {
   OnboardingSlidesContent({
@@ -68,29 +70,16 @@ class _OnboardingSlidesContentState extends State<OnboardingSlidesContent> {
           child: Column(
             children: [
               GestureDetector(
-                onTap: () {},
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width / 4,
-                      vertical: 20),
-                  decoration: const BoxDecoration(
-                      color: NelsusGreen,
-                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.black12,
-                            offset: Offset(0.0, 3.0),
-                            blurRadius: 1.0,
-                            spreadRadius: 1.0)
-                      ]),
-                  child: const Text(
-                    'Continue',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w300),
-                  ),
-                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginSignUp(),
+                      settings: const RouteSettings(arguments: 'NotNew'),
+                    ),
+                  );
+                },
+                child: NelsusButton(text: 'Continue'),
               ),
               const SizedBox(height: 10),
               Row(children: [

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nelsus/helpers/strings.dart';
 import 'package:nelsus/onboarding/widgets/slide_content.dart';
+import 'package:nelsus/widgets/nelsus_header.dart';
 
 class OnboardingSlides extends StatefulWidget {
   const OnboardingSlides({Key? key}) : super(key: key);
@@ -38,34 +38,8 @@ class _OnboardingSlidesState extends State<OnboardingSlides> {
             ),
             Expanded(
               flex: 2,
-              child: Column(
-                children: [
-                  Image.asset(
-                    'assets/images/nelsus.png',
-                    height: 40,
-                  ),
-                  const SizedBox(height: 10),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 32.0),
-                    child: Text(
-                      ProductName,
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w300,
-                        height: 1.5,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
+              child: NelsusHeader(),
             ),
-            // OnboardingSlidesContent(
-            //   text: 'Your library on your device',
-            //   imageNumber: 3,
-            // )
-
             Expanded(
               flex: 10,
               child: PageView.builder(
