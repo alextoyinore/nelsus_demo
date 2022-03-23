@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nelsus/helpers/colors.dart';
 import 'package:nelsus/helpers/strings.dart';
-import 'package:nelsus/login_signup.dart';
+import 'package:nelsus/screens/signup.dart';
 import 'package:nelsus/widgets/nelsus_button.dart';
+
+import '../../login.dart';
 
 class OnboardingSlidesContent extends StatefulWidget {
   OnboardingSlidesContent({
@@ -23,6 +25,7 @@ class _OnboardingSlidesContentState extends State<OnboardingSlidesContent> {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: AlignmentDirectional.center,
       children: [
         Column(
           children: [
@@ -33,12 +36,12 @@ class _OnboardingSlidesContentState extends State<OnboardingSlidesContent> {
                     horizontal: MediaQuery.of(context).size.width / 10,
                     vertical: 30),
                 width: MediaQuery.of(context).size.width,
-                color: NelsusGreenLight,
+                color: SecondaryLigtBackground,
                 child: Text(
                   widget.text,
                   style: const TextStyle(
-                      color: NelsusGreen,
-                      fontSize: 30,
+                      color: Primary,
+                      fontSize: 24,
                       height: 1.5,
                       fontWeight: FontWeight.w300),
                   textAlign: TextAlign.center,
@@ -51,9 +54,9 @@ class _OnboardingSlidesContentState extends State<OnboardingSlidesContent> {
                 padding: const EdgeInsets.only(
                     top: 32, left: 0, right: 0, bottom: 0),
                 decoration: BoxDecoration(
-                  color: NelsusGreenLight,
+                  color: SecondaryLigtBackground,
                   image: DecorationImage(
-                    image: AssetImage('assets/images/onboarding_pic' +
+                    image: AssetImage('assets/images/nurse' +
                         widget.imageNumber.toString() +
                         '.png'),
                     fit: BoxFit.cover,
@@ -65,8 +68,9 @@ class _OnboardingSlidesContentState extends State<OnboardingSlidesContent> {
           ],
         ),
         Positioned(
-          bottom: MediaQuery.of(context).size.height / 6,
-          left: MediaQuery.of(context).size.width / 7,
+          width: MediaQuery.of(context).size.width * .85,
+          bottom: MediaQuery.of(context).size.height / 8,
+          //left: MediaQuery.of(context).size.width / 7,
           child: Column(
             children: [
               GestureDetector(
@@ -74,7 +78,7 @@ class _OnboardingSlidesContentState extends State<OnboardingSlidesContent> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LoginSignUp(),
+                      builder: (context) => const SignUp(),
                       settings: const RouteSettings(arguments: 'NotNew'),
                     ),
                   );
@@ -82,14 +86,22 @@ class _OnboardingSlidesContentState extends State<OnboardingSlidesContent> {
                 child: NelsusButton(text: 'Continue'),
               ),
               const SizedBox(height: 10),
-              Row(children: [
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 const Text(
                   OnboardingSlidesButtonUnderMessage,
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
                 GestureDetector(
-                  onTap: () {},
-                  child: const Text(SignupLabel,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Login(),
+                        settings: const RouteSettings(arguments: 'NotNew'),
+                      ),
+                    );
+                  },
+                  child: const Text(LoginLabel,
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.white,
@@ -98,7 +110,7 @@ class _OnboardingSlidesContentState extends State<OnboardingSlidesContent> {
               ]),
             ],
           ),
-        )
+        ),
       ],
     );
   }

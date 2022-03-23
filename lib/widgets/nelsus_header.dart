@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nelsus/helpers/colors.dart';
 import 'package:nelsus/helpers/strings.dart';
 
 class NelsusHeader extends StatelessWidget {
@@ -11,10 +12,10 @@ class NelsusHeader extends StatelessWidget {
     return Column(
       children: [
         Image.asset(
-          'assets/images/nelsus.png',
-          height: 40,
+          'assets/images/inurse.png',
+          height: 60,
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 5),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 32.0),
           child: showProductName
@@ -22,7 +23,7 @@ class NelsusHeader extends StatelessWidget {
                   ProductName,
                   style: TextStyle(
                     fontSize: 20,
-                    color: Colors.black87,
+                    color: Primary,
                     fontWeight: FontWeight.w300,
                     height: 1.5,
                   ),

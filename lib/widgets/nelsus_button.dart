@@ -9,22 +9,18 @@ class NelsusButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.symmetric(
           horizontal: MediaQuery.of(context).size.width / 4, vertical: 20),
       decoration: const BoxDecoration(
-          color: NelsusGreen,
-          borderRadius: BorderRadius.all(Radius.circular(15.0)),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.black12,
-                offset: Offset(0.0, 3.0),
-                blurRadius: 1.0,
-                spreadRadius: 1.0)
-          ]),
+        color: PrimaryButton,
+        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+      ),
       child: Text(
         text,
         style: const TextStyle(
             color: Colors.white, fontSize: 25, fontWeight: FontWeight.w300),
+        textAlign: TextAlign.center,
       ),
     );
   }

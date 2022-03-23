@@ -1,8 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:nelsus/onboarding/onboarding_screens.dart';
 import 'package:nelsus/widgets/nelsus_header.dart';
+
+import 'onboarding_screens.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -43,10 +44,14 @@ class _SplashScreenState extends State<SplashScreen> {
               flex: 2,
               child: NelsusHeader(),
             ),
-            Expanded(
-              flex: 2,
-              child: Image.asset('assets/images/splash_screen_outlines.png'),
-            )
+            Container(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height / 3.5,
+              child: Image.asset(
+                'assets/images/splash_screen_outlines.png',
+                fit: BoxFit.cover,
+              ),
+            ),
           ],
         ),
       ),
