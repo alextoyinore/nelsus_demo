@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 
 class NelsusTextField extends StatelessWidget {
-  NelsusTextField({Key? key, required this.label, this.isPassword = false})
+  NelsusTextField(
+      {Key? key,
+      required this.label,
+      this.isPassword = false,
+      this.textInputType = TextInputType.text,
+      this.myValue = 'admin'})
       : super(key: key);
 
   String label;
   bool isPassword;
+  String myValue;
+  TextInputType textInputType;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: textInputType,
       decoration: InputDecoration(
         hintText: label,
         //helperText:
@@ -24,6 +32,9 @@ class NelsusTextField extends StatelessWidget {
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter your ' + label;
+        }
+        if (value != myValue) {
+          return 'Incorrect ' + label;
         }
         return null;
       },

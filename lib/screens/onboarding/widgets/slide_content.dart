@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nelsus/helpers/colors.dart';
 import 'package:nelsus/helpers/strings.dart';
-import 'package:nelsus/screens/signup.dart';
 import 'package:nelsus/widgets/nelsus_button.dart';
 
 import '../../login.dart';
+import '../../signup.dart';
 
 class OnboardingSlidesContent extends StatefulWidget {
   OnboardingSlidesContent({
@@ -22,6 +22,16 @@ class OnboardingSlidesContent extends StatefulWidget {
 }
 
 class _OnboardingSlidesContentState extends State<OnboardingSlidesContent> {
+  void goToSignUp() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const SignUp(),
+        //settings: const RouteSettings(arguments: 'NotNew'),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -73,19 +83,8 @@ class _OnboardingSlidesContentState extends State<OnboardingSlidesContent> {
           //left: MediaQuery.of(context).size.width / 7,
           child: Column(
             children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SignUp(),
-                      settings: const RouteSettings(arguments: 'NotNew'),
-                    ),
-                  );
-                },
-                child: NelsusButton(text: 'Continue'),
-              ),
-              const SizedBox(height: 10),
+              NelsusButton(text: 'Continue', action: goToSignUp),
+              const SizedBox(height: 20),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 const Text(
                   OnboardingSlidesButtonUnderMessage,
