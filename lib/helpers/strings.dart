@@ -21,4 +21,4 @@ const LoginPageTitle = 'Log in';
 
 //About app
 const AboutMessage =
-    'iNurse is an online learning resources mobile app for Nigerian nurses. iNurse helps you access the knowledge you need when you need hassle-free. \n\nDeveloped by The ELKIN Company Nigeria';
+    'iNurse is an online learning resources mobile app for Nigerian nurses. iNurse helps you access the knowledge you need when you need hassle-free. \n\n\nDeveloped by The ELKIN Company Nigeria';

@@ -23,7 +23,7 @@ abstract class NelsusAlerts {
     showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-              backgroundColor: Tetiary.withRed(50),
+              backgroundColor: Secondary,
               title: Text(title, style: TextStyle(color: Colors.white)),
               content: Text(message, style: TextStyle(color: Colors.white)),
               actions: <Widget>[

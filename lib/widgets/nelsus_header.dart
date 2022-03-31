@@ -13,7 +13,7 @@ class NelsusHeader extends StatelessWidget {
       children: [
         Image.asset(
           'assets/images/inurse.png',
-          height: 60,
+          height: 50,
         ),
         const SizedBox(height: 5),
         Padding(

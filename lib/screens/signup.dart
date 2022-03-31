@@ -21,8 +21,9 @@ class _SignUpState extends State<SignUp> {
     if (_createAccountKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text(AccountCreationSuccessMessage),
-          backgroundColor: Primary,
+          content: Text(AccountCreationSuccessMessage,
+              style: TextStyle(color: Colors.black)),
+          backgroundColor: Colors.white,
         ),
       );
       goToLogin(context);

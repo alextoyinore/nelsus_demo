@@ -44,7 +44,7 @@ class _OnboardingSlidesContentState extends State<OnboardingSlidesContent> {
               child: Container(
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width / 10,
-                    vertical: 30),
+                    vertical: 20),
                 width: MediaQuery.of(context).size.width,
                 color: SecondaryLigtBackground,
                 child: Text(

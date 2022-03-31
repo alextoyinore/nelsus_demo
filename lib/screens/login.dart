@@ -20,8 +20,9 @@ class _LoginState extends State<Login> {
     if (_loginKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text(LoginSuccessMessage),
-          backgroundColor: Primary,
+          content:
+              Text(LoginSuccessMessage, style: TextStyle(color: Colors.black)),
+          backgroundColor: Colors.white,
         ),
       );
       goToHome(context);
